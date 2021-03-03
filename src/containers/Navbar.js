@@ -1,12 +1,13 @@
+import React from "react";
 import { Navbar } from "../components";
 import { FaBars } from "react-icons/fa";
 
-export function NavbarContainer() {
+export function NavbarContainer({ setIsOpen }) {
   return (
     <Navbar>
       <Navbar.Container>
         <Navbar.Logo to="/">dolla</Navbar.Logo>
-        <Navbar.MobileIcon>
+        <Navbar.MobileIcon setIsOpen={setIsOpen}>
           <FaBars />
         </Navbar.MobileIcon>
         <Navbar.Menu>

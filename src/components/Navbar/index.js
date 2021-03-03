@@ -27,8 +27,16 @@ Navbar.Logo = function NavbarLogo({ to, children, ...restProps }) {
   );
 };
 
-Navbar.MobileIcon = function NavbarMobileIcon({ children, ...restProps }) {
-  return <MobileIcon {...restProps}>{children}</MobileIcon>;
+Navbar.MobileIcon = function NavbarMobileIcon({
+  setIsOpen,
+  children,
+  ...restProps
+}) {
+  return (
+    <MobileIcon onClick={() => setIsOpen((isOpen) => !isOpen)} {...restProps}>
+      {children}
+    </MobileIcon>
+  );
 };
 
 Navbar.Menu = function NavbarMenu({ children, ...restProps }) {
